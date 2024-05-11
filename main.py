@@ -36,8 +36,7 @@ class URLScraperBot(discord.Client):
                     "author": f"{message.author.name}#{message.author.discriminator}",
                     "message_content": message.content
                 }
-                print(data)  # For now, we just print the data
-                # Here you could also write the data to a file or a database
+                print(data)
                 with open('urls_data.csv', 'a') as file:
                     file.write(
                         f"{data['timestamp']},{data['channel_name']},{data['channel_id']},{data['url']},{data['author']},\"{data['message_content']}\"\n")
