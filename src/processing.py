@@ -1,4 +1,5 @@
 import json
+from src.database import insert_url_data
 import os
 import re
 from datetime import datetime
@@ -37,3 +38,4 @@ def extract_and_log_urls(message):
                 }
                 file.write(
                     f"{data['timestamp']},{data['channel_name']},{data['channel_id']},{data['url']},{data['author']},\"{data['message_content']}\"\n")
+                insert_url_data(data)
